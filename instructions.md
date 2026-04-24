@@ -1,10 +1,12 @@
 Exercise 2: Exploratory Data Analysis with Visualization Techniques
 
 Aim
+
 To perform exploratory data analysis (EDA) on a given dataset by applying various visualization
 methods to uncover insights, patterns, and relationships between variables.
 
 Description
+
 Exploratory Data Analysis (EDA) is a crucial step in data science. It helps in understanding the
 dataset’s structure, distribution, and relationships between variables before applying predictive
 models.
@@ -22,6 +24,7 @@ These methods collectively provide insights into platform performance, user enga
 variable relationships.
 
 List of Tasks
+
 1. Load the dataset into a Pandas DataFrame.
 
 import pandas as pd 
@@ -34,9 +37,11 @@ data = {
 df=pd.DataFrame(data)
 
 2. Generate basic statistics using describe().
+
 df.describe()
 
-3. Plot a Histogram to show distribution of users.
+4. Plot a Histogram to show distribution of users.
+
 import matplotlib.pyplot as plt 
 plt.figure(figsize=(8,6))
 plt.hist(df["Users (in millions)"], bins = 5,color="skyblue",edgecolor='black')
@@ -45,7 +50,8 @@ plt.xlabel("Users (in millions)")
 plt.ylabel("Frequency")
 plt.show()
 
-4. Create a Scatter Plot to visualize Daily Active Users vs Engagement Rate.
+6. Create a Scatter Plot to visualize Daily Active Users vs Engagement Rate.
+
 import matplotlib.pyplot as plt 
 import seaborn as sns 
  
@@ -65,6 +71,7 @@ plt.legend(title='Platform')
 plt.show()
 
 5. Generate a Correlation Heatmap to analyze
+
 plt.figure(figsize=(8,6)) 
 corr=df[["Users (in millions)","Daily Active Users (in millions)","Enagagement Rate (%)"]].corr() 
 sns.heatmap(corr, annot=True,cmap='coolwarm') 
@@ -72,6 +79,7 @@ plt.title('Correlatiom Heatmap - 7097')
 plt.show()
 
 6. Draw a Box Plot to compare engagement rates across platforms.
+
 plt.figure(figsize=(8,6))
 sns.boxplot(
     x="Platform",
@@ -88,5 +96,6 @@ plt.xticks(rotation=45)
 plt.show()
 
 Result:
+
 Exploratory data analysis was successfully performed using multiple visualizations, revealing key
 patterns, relationships, and insights among the variables in the dataset.
